@@ -5,7 +5,6 @@ exports.vistaAdmin = (req,res) => {
 }
 
 exports.usuarios = async (req,res) => {
-
     let sql = "SELECT * FROM usuarios";
     await mysql.query(sql, (err, resultado) => {
         if(err) {
@@ -18,6 +17,17 @@ exports.usuarios = async (req,res) => {
         }
     });
 }
+
+exports.eliminarUsuario = async (req,res) => {
+    let sql = "DELETE FROM usuarios WHERE id_usuario = ?"
+    await mysql.query(sql, [req.params.id], (err) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/usuarios');
+        }
+    });
+} 
 
 exports.productos = (req,res) => {
     res.render('admin/productos');
