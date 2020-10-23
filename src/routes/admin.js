@@ -7,5 +7,6 @@ router.get('/productos', adminController.productos);
 
 router.get('/usuario/:id', adminController.eliminarUsuario);
 router.post('/usuario/:id', adminController.actualizarUsuario);
+router.post('/usuario', adminController.registrarAdmin);
 
 module.exports = router;

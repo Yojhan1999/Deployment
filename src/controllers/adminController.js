@@ -41,6 +41,24 @@ exports.actualizarUsuario = async (req,res) => {
     });
 }
 
+exports.registrarAdmin = async (req,res) => {
+    let newUser = {
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        correo: req.body.email,
+        password: req.body.password,
+        id_rol: 1
+    }
+    let sql = "INSERT INTO usuarios SET ?";
+    await mysql.query(sql, newUser, (err) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/usuarios');
+        }
+    });
+}
+
 exports.productos = (req,res) => {
     res.render('admin/productos');
 }
