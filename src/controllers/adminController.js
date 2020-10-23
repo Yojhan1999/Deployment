@@ -59,7 +59,7 @@ exports.registrarAdmin = async (req,res) => {
     });
 }
 
-exports.productos = (req,res) => {
+exports.productos = async (req,res) => {
     let sql = "SELECT * FROM productos";
     await mysql.query(sql, (err, resultado) => {
         if(err) {
