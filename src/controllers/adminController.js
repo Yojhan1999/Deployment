@@ -60,5 +60,15 @@ exports.registrarAdmin = async (req,res) => {
 }
 
 exports.productos = (req,res) => {
-    res.render('admin/productos');
+    let sql = "SELECT * FROM usuarios";
+    await mysql.query(sql, (err, resultado) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            console.log(resultado);
+            res.render('admin/productos', {
+                helados: resultado
+            });
+        }
+    });
 }
