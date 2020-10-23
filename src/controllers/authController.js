@@ -27,9 +27,7 @@ exports.registrarUsuario = async (req,res) => {
 }
 
 exports.ingresarUsuario = async (req,res) => {
-    
     const { email, password } = req.body;
-
     let sql = "SELECT id_rol FROM usuarios WHERE correo = ? AND password = ?";
     await mysql.query(sql, [email, password], (err, resultado) => {
         if(err) {
