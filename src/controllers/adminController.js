@@ -7,7 +7,7 @@ exports.vistaAdmin = (req,res) => {
 exports.usuarios = async (req,res) => {
 
     let sql = "SELECT * FROM usuarios";
-    await mysql.query(sql, newUser, (err, resultado) => {
+    await mysql.query(sql, (err, resultado) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
