@@ -13,7 +13,7 @@ exports.usuarios = async (req,res) => {
         } else {
             console.log(resultado);
             res.render('admin/usuarios', {
-                hola: [{yo: "aa"}]
+                usuarios: resultado
             });
         }
     });
