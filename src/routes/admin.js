@@ -5,4 +5,6 @@ router.get('/admin', adminController.vistaAdmin);
 router.get('/usuarios', adminController.usuarios);
 router.get('/productos', adminController.productos);
 
+router.delete('/usuario/:id', authController.eliminarUsuario);
+
 module.exports = router;
