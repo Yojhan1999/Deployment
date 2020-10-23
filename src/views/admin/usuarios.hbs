@@ -8,7 +8,6 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Rol</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>
@@ -21,6 +20,7 @@
                         <td>{{ correo }}</td>
                         <td>
                             <a href="/usuario/{{ id_usuario }}" class="btn btn-danger">Eliminar</a>
+                            <a href="#" class="btn btn-primary">Modificar</a>
                         </td>
                     </tr>
                 {{/if}}
@@ -31,6 +31,7 @@
                         <td>{{ correo }}</td>
                         <td>
                             <a href="/usuario/{{ id_usuario }}" class="btn btn-danger">Eliminar</a>
+                            <a href="#" class="btn btn-primary">Modificar</a>
                         </td>
                     </tr>
                 {{/if}}
