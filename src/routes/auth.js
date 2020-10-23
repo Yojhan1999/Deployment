@@ -7,6 +7,6 @@ router.get('/registro', authController.formRegistro);
 router.post('/registro', authController.registrarUsuario);
 router.post('/ingresar', authController.ingresarUsuario);
 
-router.delete('/usuario/:id');
+router.delete('/usuario/:id', authController.eliminarUsuario);
 
 module.exports = router;
