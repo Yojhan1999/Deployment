@@ -36,7 +36,7 @@
                     <p class="card-text">{{ precio }}</p>
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="#" class="btn btn-danger">Eliminar</a>
+                            <a href="/producto/{{ id_producto }}" class="btn btn-danger">Eliminar</a>
                         </div>
                         <div class="col-md-6">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ id_producto }}">
@@ -60,7 +60,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" method="post">
+                    <form action="/producto/{{ id_producto }}" method="post">
                         <div class="form-group">
                             <label>ID: </label>
                             <input name="id" type="text" value="{{ id_producto }}" class="form-control" disabled>

@@ -73,3 +73,26 @@ exports.productos = async (req,res) => {
         }
     });
 }
+
+exports.eliminarProducto = async (req,res) => {
+    let sql = "DELETE FROM productos WHERE id_producto = ?"
+    await mysql.query(sql, [req.params.id], (err) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/productos');
+        }
+    });
+}
+
+exports.actualizarUsuario = async (req,res) => {
+    const { descripcion, precio, imagen } = req.body;
+    let sql = "UPDATE productos SET descripcion = ?, precio = ?, imagen = ? WHERE id_producto = ?";
+    await mysql.query(sql, [descripcion, precio, imagen, req.params.id], (err) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/usuarios');
+        }
+    });
+}
