@@ -12,7 +12,7 @@ exports.usuarios = async (req,res) => {
             res.status(401).json({ err: err });
         } else {
             console.log(resultado);
-            res.render('admin/usuarios');
+            res.render('admin/usuarios', { usuarios: resultado });
         }
     });
 }

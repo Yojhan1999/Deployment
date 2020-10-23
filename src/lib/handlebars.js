@@ -1,6 +1,6 @@
 const handlebars = require('handlebars');
 
-handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+handlebars.registerHelper('if', function (v1, operator, v2, options) {
 
     switch (operator) {
         case '==':
