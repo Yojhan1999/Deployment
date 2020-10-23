@@ -2,11 +2,49 @@
 <div style="margin-left: 20%">
     <h1>USUARIOS</h1>
 
-    {{#each usuarios}}
-        <h1>{{ nombre }}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each usuarios}}
+                {{#if id_rol '==' 1}}
+                    <tr style="background: #123456;">
+                        <td>{{ nombre }}</td>
+                        <td>{{ apellido }}</td>
+                        <td>{{ correo }}</td>
+                        <td>
+                            <a href="/usuario/{{ id_usuario }}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {{/if}}
+                {{#if id_rol '==' 2}}
+                    <tr style="background: #777777;">
+                        <td>{{ nombre }}</td>
+                        <td>{{ apellido }}</td>
+                        <td>{{ correo }}</td>
+                        <td>
+                            <a href="/usuario/{{ id_usuario }}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {{/if}}
+            {{/each}}
+            
 
-        {{#if id_rol '==' 1}} <h1>Admin</h1> {{/if}}
-        {{#if id_rol '==' 2}} <h1>Usuario</h1> {{/if}}
+        </tbody>
+    </table>
+
+    {{#each usuarios}}
+    <h1>{{ nombre }}</h1>
+
+    {{#if id_rol '==' 1}} <h1>Admin</h1> {{/if}}
+    {{#if id_rol '==' 2}} <h1>Usuario</h1> {{/if}}
 
     {{/each}}
 
