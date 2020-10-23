@@ -4,6 +4,10 @@
 
     {{#each usuarios}}
         <h1>{{ nombre }}</h1>
+
+        {{#if id_rol == 1}} <h1>Admin</h1> {{/if}}
+        {{#if id_rol == 2}} <h1>Usuario</h1> {{/if}}
+
     {{/each}}
 
 </div>
