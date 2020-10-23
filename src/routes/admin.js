@@ -6,5 +6,6 @@ router.get('/usuarios', adminController.usuarios);
 router.get('/productos', adminController.productos);
 
 router.get('/usuario/:id', adminController.eliminarUsuario);
+router.post('/usuario/:id',)
 
 module.exports = router;
