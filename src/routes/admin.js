@@ -11,5 +11,6 @@ router.post('/usuario', adminController.registrarAdmin);
 
 router.get('/producto/:id', adminController.eliminarProducto);
 router.post('/producto/:id', adminController.actualizarUsuario);
+router.post('/producto', adminController.registrarProducto);
 
 module.exports = router;

@@ -69,7 +69,6 @@ exports.productos = async (req,res) => {
             res.render('admin/productos', {
                 helados: resultado
             });
-            //
         }
     });
 }
@@ -93,6 +92,22 @@ exports.actualizarUsuario = async (req,res) => {
             res.status(401).json({ err: err });
         } else {
             res.redirect('/usuarios');
+        }
+    });
+}
+
+exports.registrarProducto = async (req,res) => {
+    let newProduct = {
+        descripcion: req.body.descripcion,
+        precio: req.body.precio,
+        imagen: req.body.imagen,
+    }
+    let sql = "INSERT INTO productos SET ?";
+    await mysql.query(sql, newProduct, (err) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/productos');
         }
     });
 }
