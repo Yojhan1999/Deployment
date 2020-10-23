@@ -69,6 +69,7 @@ exports.productos = (req,res) => {
             res.render('admin/productos', {
                 helados: resultado
             });
+            //
         }
     });
 }
