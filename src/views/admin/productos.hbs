@@ -21,29 +21,31 @@
         </form>
     </div>
 
-    {{#each helados}}
-
     <div class="row">
         <div class="col-md-6">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ imagen }}" class="card-img-top">
-                <div class="card-body">
-                    <p class="card-text">{{ descripcion }}</p>
-                    <p class="card-text">{{ precio }}</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a href="/producto/{{ id_producto }}" class="btn btn-danger">Eliminar</a>
-                        </div>
-                        <div class="col-md-6">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ id_producto }}">
-                                Modificar
-                            </button>
+            {{#each helados}}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ imagen }}" class="card-img-top">
+                    <div class="card-body">
+                        <p class="card-text">{{ descripcion }}</p>
+                        <p class="card-text">{{ precio }}</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/producto/{{ id_producto }}" class="btn btn-danger">Eliminar</a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ id_producto }}">
+                                    Modificar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {{/each}}
         </div>
     </div>
+
+    {{#each helados}}
 
     <div class="modal fade" id="exampleModal{{ id_producto }}" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">

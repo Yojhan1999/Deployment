@@ -10,7 +10,7 @@ router.post('/usuario/:id', adminController.actualizarUsuario);
 router.post('/usuario', adminController.registrarAdmin);
 
 router.get('/producto/:id', adminController.eliminarProducto);
-router.post('/producto/:id', adminController.actualizarUsuario);
+router.post('/producto/:id', adminController.actualizarProducto);
 router.post('/producto', adminController.registrarProducto);
 
 module.exports = router;

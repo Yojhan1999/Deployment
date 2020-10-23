@@ -84,7 +84,7 @@ exports.eliminarProducto = async (req,res) => {
     });
 }
 
-exports.actualizarUsuario = async (req,res) => {
+exports.actualizarProducto = async (req,res) => {
     const { descripcion, precio, imagen } = req.body;
     let sql = "UPDATE productos SET descripcion = ?, precio = ?, imagen = ? WHERE id_producto = ?";
     await mysql.query(sql, [descripcion, precio, imagen, req.params.id], (err) => {
