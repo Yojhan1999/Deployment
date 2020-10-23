@@ -60,7 +60,7 @@ exports.registrarAdmin = async (req,res) => {
 }
 
 exports.productos = (req,res) => {
-    let sql = "SELECT * FROM usuarios";
+    let sql = "SELECT * FROM productos";
     await mysql.query(sql, (err, resultado) => {
         if(err) {
             res.status(401).json({ err: err });
