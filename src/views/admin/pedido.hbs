@@ -11,11 +11,11 @@
         </thead>
         <tbody>
             {{#each pedidos}}
-            <tr>
-                <td>{{ nombre }}</td>
+            <tr style="background: blueviolet;">
+                <td >{{ nombre }}</td>
                 <td>{{ apellido }}</td>
                 <td>{{ fecha_pedido }}</td>
-                <td><img src="{{ imagen }}" alt=""></td>
+                <td><img src="{{ imagen }}" width="200"></td>
                 <td>
                     <a href="/pedido/{{ id_pedido }}" class="btn btn-danger">Eliminar</a>
                 </td>
