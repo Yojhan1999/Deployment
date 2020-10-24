@@ -8,7 +8,7 @@ exports.vistaUsuario = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            resultado[0].id_usuario = req.params.id;
+            resultado[1].id_usuario = req.params.id;
             console.log(resultado);
             res.render('usuario/index', {
                 helados: resultado,
