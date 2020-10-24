@@ -2,6 +2,7 @@ const mysql = require('../database');
 const moment = require('moment');
 
 exports.vistaUsuario = async (req,res) => {
+    console.log(req.params.id);
     let sql = "SELECT * FROM productos";
     await mysql.query(sql, (err, resultado) => {
         if(err) {
