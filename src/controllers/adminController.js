@@ -114,7 +114,7 @@ exports.registrarProducto = async (req,res) => {
 
 exports.pedidoAdmin = async (req,res) => {
     let sql = `
-    SELECT u.nombre, u.apellido, pe.fecha_pedido, p.imagen 
+    SELECT pe.id_pedido ,u.nombre, u.apellido, pe.fecha_pedido, p.imagen 
     FROM usuarios u, productos p, pedidos pe
     WHERE pe.id_usuario = u.id_usuario 
     AND pe.id_producto = p.id_producto; 
