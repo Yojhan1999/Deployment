@@ -130,3 +130,14 @@ exports.pedidoAdmin = async (req,res) => {
         }
     });
 }
+
+exports.eliminarPedido = async (req,res) => {
+    let sql = "DELETE FROM pedidos WHERE id_pedido = ?"
+    await mysql.query(sql, [req.params.id], (err) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            res.redirect('/pedido');
+        }
+    });
+}

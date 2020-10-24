@@ -14,6 +14,7 @@ router.post('/producto/:id', adminController.actualizarProducto);
 router.post('/producto', adminController.registrarProducto);
 
 router.get('/pedidos', adminController.pedidoAdmin);
+router.get('/pedido/:id',adminController.eliminarPedido);
 
 
 module.exports = router;
