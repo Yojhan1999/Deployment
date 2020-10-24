@@ -28,15 +28,15 @@ exports.registrarUsuario = async (req,res) => {
 
 exports.ingresarUsuario = async (req,res) => {
     const { email, password } = req.body;
-    let sql = "SELECT id_rol FROM usuarios WHERE correo = ? AND password = ?";
+    let sql = "SELECT id_rol, id_usuario FROM usuarios WHERE correo = ? AND password = ?";
     await mysql.query(sql, [email, password], (err, resultado) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
             if(resultado[0].id_rol === 1) {
-                res.redirect(`/admin/${resultado[0].id_rol}`);
+                res.redirect(`/admin/${resultado[0].id_usuario}`);
             } else {
-                res.redirect(`/user/${resultado[0].id_rol}`);
+                res.redirect(`/user/${resultado[0].id_usuario}`);
             }
         }
     });
