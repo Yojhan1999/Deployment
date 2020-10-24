@@ -1,0 +1,26 @@
+{{> Sidebar}}
+<div style="margin-left: 20%">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">nombre</th>
+                <th scope="col">apellido</th>
+                <th scope="col">fecha_pedido</th>
+                <th scope="col">imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each pedidos}}
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>{{ apellido }}</td>
+                <td>{{ fecha_pedido }}</td>
+                <td><img src="{{ imagen }}" alt=""></td>
+                <td>
+                    <a href="/pedido/{{ id_pedido }}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

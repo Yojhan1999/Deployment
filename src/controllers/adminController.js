@@ -111,3 +111,22 @@ exports.registrarProducto = async (req,res) => {
         }
     });
 }
+
+exports.pedidoAdmin = async (req,res) => {
+    let sql = `
+    SELECT u.nombre, u.apellido, pe.fecha_pedido, p.imagen 
+    FROM usuarios u, productos p, pedidos pe
+    WHERE pe.id_usuario = u.id_usuario 
+    AND pe.id_producto = p.id_producto; 
+    `;
+    await mysql.query(sql, (err, resultado) => {
+        if(err) {
+            res.status(401).json({ err: err });
+        } else {
+            console.log(resultado);
+            res.render('admin/pedido', {
+                pedidos: resultado
+            });
+        }
+    });
+}
