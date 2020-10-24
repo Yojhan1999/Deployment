@@ -1,6 +1,6 @@
 const mysql = require('../database');
 
-exports.vistaUsuario = (req,res) => {
+exports.vistaUsuario = async (req,res) => {
     let sql = "SELECT * FROM productos";
     await mysql.query(sql, (err, resultado) => {
         if(err) {
