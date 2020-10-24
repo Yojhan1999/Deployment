@@ -8,12 +8,11 @@ exports.vistaUsuario = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            for(let i = 0; i <= resultado.length; i++) {
+            for(let i = 0; i < resultado.length; i++) {
                 resultado[i].id_usuario = req.params.id
             }
             res.render('usuario/index', {
                 helados: resultado,
-                id_usuario: req.params.id
             });
         }
     });
