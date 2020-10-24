@@ -137,7 +137,7 @@ exports.eliminarPedido = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.redirect('/pedido');
+            res.redirect('/pedidos');
         }
     });
 }
