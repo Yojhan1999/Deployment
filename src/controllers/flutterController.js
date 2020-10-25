@@ -8,6 +8,7 @@ exports.login = async (req,res) => {
             res.status(401).json({ err: err });
         } else {
             console.log(resultado[0]);
+            res.status(200).json({ data: resultado[0].id_rol });
         }
     });
 }
