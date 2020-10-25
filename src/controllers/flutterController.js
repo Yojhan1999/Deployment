@@ -7,7 +7,8 @@ exports.login = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.status(200).json({ data: resultado });
+            print(resultado[0]);
+            res.status(200).json({ data: resultado[0] });
         }
     });
 }
@@ -18,7 +19,8 @@ exports.listarProductos = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.status(200).json({ data: resultado });
+            print(resultado[0])
+            res.status(200).json({ data: resultado[0] });
         }
     });
 }
