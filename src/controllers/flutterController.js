@@ -7,7 +7,7 @@ exports.login = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            console.log(resultado[0])
+            console.log(resultado[0]);
         }
     });
 }
