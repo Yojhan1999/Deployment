@@ -91,7 +91,7 @@ exports.actualizarProducto = async (req,res) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
-            res.redirect('/usuarios');
+            res.redirect('/productos');
         }
     });
 }
