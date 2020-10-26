@@ -24,13 +24,8 @@ exports.listarProductos = async (req,res) => {
 }
 
 exports.realizarPedido = async (req,res) => {
-    let newPedido = {
-        id_usuario: req.params.usuario,
-        id_producto: req.params.producto,
-        fecha_pedido: moment(Date.now()).format("YYYY-MM-DD")
-    }
-    let sql = "INSERT INTO pedidos SET ?";
-    await mysql.query(sql, newPedido, (err) => {
+    let sql = "INSERT INTO pedidos(id_usuario, id_producto, fecha_pedido) VALUES ('?','?',NOW())";
+    await mysql.query(sql, [req.params.usuario, req.params.producto], (err) => {
         if(err) {
             res.status(401).json({ err: err });
         } else {
